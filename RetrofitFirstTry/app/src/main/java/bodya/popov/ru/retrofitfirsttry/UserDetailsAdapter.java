@@ -14,11 +14,11 @@ import bodya.popov.ru.retrofitfirsttry.bean.UserBean;
  * @author Popov Bogdan
  */
 
-public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> {
+public class UserDetailsAdapter extends RecyclerView.Adapter<UserDetailsAdapter.ViewHolder> {
 
     private List<UserBean> mUserBeanList;
 
-    public PostsAdapter(List<UserBean> mUserBeanList) {
+    public UserDetailsAdapter(List<UserBean> mUserBeanList) {
         this.mUserBeanList = mUserBeanList;
     }
 

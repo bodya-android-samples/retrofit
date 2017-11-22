@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">RetrofitFirstTry</string>
-    <string name="load_posts_button">load data</string>
+    <string name="load_users_button">load data</string>
 </resources>

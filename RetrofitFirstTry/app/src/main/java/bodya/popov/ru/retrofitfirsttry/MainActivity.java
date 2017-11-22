@@ -19,7 +19,7 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-    private PostsAdapter mPostsAdapter;
+    private UserDetailsAdapter mUserDetailsAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,14 +29,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initViews() {
-        RecyclerView userDetailsListRecyclerView = findViewById(R.id.posts_recycler_view);
+        RecyclerView userDetailsListRecyclerView = findViewById(R.id.user_details_recycler_view);
         LinearLayoutManager manager = new LinearLayoutManager(this);
         userDetailsListRecyclerView.setLayoutManager(manager);
 
-        mPostsAdapter = new PostsAdapter(new ArrayList<UserBean>());
-        userDetailsListRecyclerView.setAdapter(mPostsAdapter);
+        mUserDetailsAdapter = new UserDetailsAdapter(new ArrayList<UserBean>());
+        userDetailsListRecyclerView.setAdapter(mUserDetailsAdapter);
 
-        Button loadDataButton = findViewById(R.id.get_posts_button);
+        Button loadDataButton = findViewById(R.id.get_users_button);
         loadDataButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         public void onResponse(@NonNull Call<ResponseBean> call, @NonNull Response<ResponseBean> response) {
             ResponseBean responseBean = response.body();
             if (responseBean != null) {
-                mPostsAdapter.setData(responseBean.getItems());
+                mUserDetailsAdapter.setData(responseBean.getItems());
             }
         }
 
